@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío Egresados 2026 - El Mensaje Oculto</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="badge">🎓 Promoción 2026</div>
+            <h1>El Mensaje del Futuro</h1>
+            <p class="subtitle">Descifra el enigma para revelar el secreto de vuestro reencuentro de graduación.</p>
+        </header>
+
+        <main class="puzzle-card">
+            <section class="cipher-section">
+                <h2>Mensaje Cifrado (Cifrado de Vigenère)</h2>
+                <div class="cipher-box" id="ciphertextDisplay">
+                    <!-- Loaded dynamically or statically -->
+                </div>
+                <p class="instruction-text">Introduce la clave secreta o experimenta para descifrar el mensaje:</p>
+            </section>
+
+            <section class="controls-section">
+                <div class="input-group">
+                    <label for="keyInput">Palabra Clave (Key):</label>
+                    <input type="text" id="keyInput" placeholder="Ej. PALABRA" autocomplete="off" spellcheck="false">
+                </div>
+                <div class="button-group">
+                    <button id="decryptBtn" class="btn primary-btn">Descifrar</button>
+                    <button id="resetBtn" class="btn secondary-btn">Reiniciar</button>
+                </div>
+            </section>
+
+            <section class="result-section">
+                <h2>Mensaje Descifrado:</h2>
+                <div class="result-box" id="resultDisplay">
+                    <span class="placeholder-text">El mensaje descifrado aparecerá aquí...</span>
+                </div>
+            </section>
+
+            <section class="hints-section">
+                <h3>🔍 Pistas para los Egresados</h3>
+                <div class="hints-list">
+                    <div class="hint-item">
+                        <button class="hint-btn" onclick="toggleHint(1)">Pista 1: ¿De qué temática es la clave?</button>
+                        <p id="hint1" class="hint-content hidden">La clave está relacionada con el nombre de nuestra querida plataforma o grupo de trabajo (6 letras).</p>
+                    </div>
+                    <div class="hint-item">
+                        <button class="hint-btn" onclick="toggleHint(2)">Pista 2: Iniciales y longitud</button>
+                        <p id="hint2" class="hint-content hidden">Comienza con la letra 'T' y termina con la letra 'A'.</p>
+                    </div>
+                    <div class="hint-item">
+                        <button class="hint-btn" onclick="toggleHint(3)">Pista 3: Solución directa (por si acaso)</button>
+                        <p id="hint3" class="hint-content hidden">La palabra clave es: <strong>TARARA</strong></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Success Modal / Banner -->
+        <div id="successModal" class="modal hidden">
+            <div class="modal-content">
+                <div class="trophy-icon">🏆</div>
+                <h2>¡Felicitaciones, Egresados!</h2>
+                <p>Habéis descifrado con éxito el mensaje cifrado:</p>
+                <div id="finalDecryptedMessage" class="final-message"></div>
+                <p class="success-note">Guardad este secreto para el gran día de la celebración. ¡El futuro es vuestro!</p>
+                <button id="closeModalBtn" class="btn primary-btn">¡Entendido!</button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2026 - Desafío Criptográfico para Egresados</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
