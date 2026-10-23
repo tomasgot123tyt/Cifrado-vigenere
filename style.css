@@ -232,7 +232,7 @@ section h2, section h3 {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 /* Modal */
